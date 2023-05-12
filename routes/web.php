@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\department;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('departments', function () {
+    $departments=
+    ['departments'=>department::get()];
+    return view('departments',$departments);
 });
